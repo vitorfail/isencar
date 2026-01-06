@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isencar - Seu Carro 0km com até 30% de Desconto | Isenções PcD</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #1a6dcc;
+            --primary-dark: #0d56a3;
+            --secondary: #ff6b00;
+            --light: #f8f9fa;
+            --dark: #333;
+            --gray: #6c757d;
+            --success: #28a745;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f5f7fa;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            width: 200px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: url("logo.png");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .logo h1 {
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .contact-header {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .phone {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .phone:hover {
+            color: var(--primary-dark);
+        }
+
+        .cta-button {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .cta-button:hover {
+            background-color: #e55a00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(19, 61, 110, 0.774), rgba(7, 54, 104, 0.747)), url('https://images.unsplash.com/photo-1486496572940-2bb2341fdbdf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .highlight {
+            color: #ffdd00;
+            font-weight: bold;
+        }
+
+        .discount-badge {
+            background-color: var(--secondary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        .carousel-container .section-title{
+            width: 30%;
+            line-height: 1.1;
+        }
+
+        /* Services Section */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary);
+            font-size: 2.2rem;
+        }
+
+        section {
+            padding: 70px 0;
+        }
+
+        .services {
+            background-color: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            border-top: 4px solid var(--primary);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-card i {
+            color: var(--secondary);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: #f0f7ff;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--secondary);
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .client-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+
+        .client-details h4 {
+            color: var(--primary);
+        }
+
+        .client-details p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .rating {
+            color: #ffc107;
+            margin-bottom: 10px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            color: var(--gray);
+        }
+
+        /* Eligibility */
+        .eligibility {
+            background-color: white;
+        }
+
+        .eligibility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .eligibility-card {
+            padding: 25px;
+            border-radius: 10px;
+            background-color: #f0f7ff;
+            border: 1px solid #d1e7ff;
+        }
+
+        .eligibility-card h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .disease-list {
+            list-style-type: none;
+        }
+
+        .disease-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #d1e7ff;
+            display: flex;
+            align-items: center;
+        }
+
+        .disease-list li:before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Process */
+        .process {
+            background-color: #f0f7ff;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            counter-reset: step-counter;
+        }
+
+        .process-step {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            background-color: white;
+            padding: 30px 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            counter-increment: step-counter;
+        }
+
+        .process-step:before {
+            content: counter(step-counter);
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .process-step h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* FAQ */
+        .faq {
+            background-color: white;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 18px 20px;
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: var(--primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-answer.active {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        /* Bonus */
+        .bonus {
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            border-radius: 15px;
+            margin: 50px 0;
+        }
+
+        .bonus h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            background-color: white;
+            padding: 60px 0;
+        }
+
+        .cta-section h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+        }
+
+        .whatsapp-button {
+            background-color: #25D366;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-column p, .footer-column a {
+            color: #ccc;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .disclaimer {
+            background-color: #ffefd6;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #856404;
+            border-left: 4px solid #ffc107;
+        }
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 100px 0;
+        }
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .carousel-slide {
+            min-width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            width: 70%;
+            max-width: 350px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card img{
+            width: 100%;
+            height: auto;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card-header {
+            background: #2c3e50;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .card-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .card-header .model-year {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .card-content {
+            padding: 25px;
+        }
+        
+        .original-price {
+            color: #e74c3c;
+            text-decoration: line-through;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .discount-price {
+            color: #27ae60;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .price-label {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        .tax-info {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 0.9rem;
+            color: #2c3e50;
+            margin: 20px 0;
+            border-left: 4px solid #3498db;
+        }
+        
+        .savings {
+            background: #e8f6f3;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            margin: 20px 0;
+            border: 2px dashed #27ae60;
+        }
+        
+        .savings h3 {
+            color: #27ae60;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .savings p {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        .btn-interest {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 16px;
+            width: 100%;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .btn-interest:hover {
+            background: #c0392b;
+        }
+        
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+            gap: 15px;
+        }
+        
+        .carousel-nav button {
+            background: rgba(0, 0, 0, 0.2);
+            border: none;
+            color: rgb(0, 0, 0);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .carousel-nav button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+        
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+            gap: 10px;
+        }
+        
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(56, 56, 56, 0.616);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .indicator.active {
+            background: rgb(0, 0, 0);
+            transform: scale(1.2);
+        }
+        
+        .footer-note {
+            text-align: center;
+            color: rgba(0, 0, 0, 0.7);
+            margin-bottom: 40px;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .card-header h2 {
+                font-size: 1.5rem;
+            }
+            
+            .discount-price {
+                font-size: 1.7rem;
+            }
+            
+            .carousel-nav button {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .card {
+                width: 100%;
+            }
+            
+            .card-content {
+                padding: 20px;
+            }
+            
+            .carousel-slide {
+                padding: 10px;
+            }
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .contact-header {
+                align-items: center;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .process-step {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+            </div>
+            <div class="contact-header">
+                <a href="https://wa.me/551143049190" class="phone">
+                    <i class="fas fa-phone"></i> (11) 4304-9190
+                </a>
+                <p>Atendimento em todo o Estado de SP</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="discount-badge">ATÉ 30%* DE DESCONTO</div>
+            <h2>Compre seu Carro 0km com Isenções PcD</h2>
+            <p>Livre-se da burocracia! Cuidamos de tudo: <span class="highlight">CNH PcD e Isenções (IPI, ICMS, IPVA e Rodízio)</span>. Seu processo com agilidade e segurança!</p>
+            <a href="https://wa.me/551143049190" class="cta-button">SIMULAR MEU DIREITO GRÁTIS</a>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="servicos">
+        <div class="container">
+            <h2 class="section-title">Cuidamos de Todo o Processo</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3><i class="fas fa-file-alt"></i> Documentação</h3>
+                    <p>Analisamos sua documentação médica e verificamos seu direito às isenções PcD de forma gratuita.</p>
+                </div>
+                <div class="service-card">
+                    <h3><i class="fas fa-id-card"></i> CNH PcD</h3>
+                    <p>Para condutores, realizamos a alteração da CNH para PcD junto ao Detran-SP com credenciamento próprio.</p>
+                </div>
+                <div class="service-card">
+                    <h3><i class="fas fa-percentage"></i> Isenções Fiscais</h3>
+                    <p>Solicitamos as isenções de IPI, ICMS, IPVA e Rodízio, garantindo os máximos benefícios fiscais.</p>
+                </div>
+                <div class="service-card">
+                    <h3><i class="fas fa-car-side"></i> Veículo Faturado</h3>
+                    <p>Após aprovação, cuidamos da documentação e emplacamento do veículo, finalizando todo o processo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Quem conhece, confia na Isencar</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="client-info">
+                        <div class="client-avatar">J</div>
+                        <div class="client-details">
+                            <h4>Jeremias</h4>
+                            <p>Analista de TI</p>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Recomendo, serviço nota 10. Comprei 2 carros PcD com a Isencar."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="client-info">
+                        <div class="client-avatar">N</div>
+                        <div class="client-details">
+                            <h4>Nicolai</h4>
+                            <p>Engenheiro</p>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Já comprei 3 carros PcD e recomendo a Isencar. Processo ágil e seguro."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="client-info">
+                        <div class="client-avatar">J</div>
+                        <div class="client-details">
+                            <h4>José Roberto</h4>
+                            <p>Professor</p>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Sou cliente desde 2016 e já fiz 3 isenções PcD. Serviço confiável e eficiente."</p>
+                </div>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">485</div>
+                    <div class="stat-label">Avaliações 5★</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">+4.000</div>
+                    <div class="stat-label">Clientes Atendidos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eligibility -->
+    <section class="eligibility" id="direito">
+        <div class="container">
+            <h2 class="section-title">Quem tem direito?</h2>
+            <p style="text-align: center; margin-bottom: 30px; font-size: 1.2rem;">O desconto não é só para cadeirantes. Veja se você se enquadra:</p>
+            <div class="eligibility-grid">
+                <div class="eligibility-card">
+                    <h3><i class="fas fa-wheelchair"></i> Condutores</h3>
+                    <p>Pessoas com limitações de força e/ou movimento:</p>
+                    <ul class="disease-list">
+                        <li>Esclerose Múltipla</li>
+                        <li>Artrite e Artrose</li>
+                        <li>Mastectomia</li>
+                        <li>Problemas na coluna, joelho, ombro, quadril</li>
+                        <li>Condromalácia Patelar</li>
+                        <li>Hérnia de Disco</li>
+                        <li>Entre outras</li>
+                    </ul>
+                </div>
+                <div class="eligibility-card">
+                    <h3><i class="fas fa-user-friends"></i> Não Condutores</h3>
+                    <p>Adultos e crianças com as seguintes condições:</p>
+                    <ul class="disease-list">
+                        <li>Autismo (TEA)</li>
+                        <li>Paralisia Cerebral</li>
+                        <li>Alzheimer</li>
+                        <li>Parkinson</li>
+                        <li>Síndrome de Down</li>
+                        <li>Baixa Visão em ambos os Olhos</li>
+                        <li>Entre outras</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <p>A isenção para Não Condutores pode ser solicitada tanto pela própria pessoa quanto por seu responsável legal.</p>
+                <a href="https://wa.me/551143049190" class="whatsapp-button" style="margin-top: 20px;">
+                    <i class="fab fa-whatsapp"></i> Tem dúvida se sua patologia entra? Fale conosco no WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+        <div class="carousel-container">
+            <h1 class="section-title">Veja quanto você deixa de
+            perder com a nossa assessoria:</h1>
+            <div class="footer-note">
+                <p><i class="fas fa-info-circle"></i> Ofertas válidas por tempo limitado. Consulte condições na concessionária.</p>
+            </div>
+            <div class="carousel">
+                <!-- Slide 1 -->
+                <div class="carousel-slide">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Tera Comfort 2026</h2>
+                        </div>
+                        <img src="tera-comfort-2026.webp"/>
+                        <div class="card-content">
+                            <div class="original-price">de R$ 128.890,00</div>
+                            <div class="price-label">por a partir de</div>
+                            <div class="discount-price">R$ 111.789,92</div>
+                            
+                            <div class="tax-info">
+                                <i class="fas fa-check-circle"></i> Com isenção de IPI
+                            </div>
+                            
+                            <div class="savings">
+                                <h3>ECONOMIA DE</h3>
+                                <p>R$ 17.100,08</p>
+                            </div>
+                            
+                            <button class="btn-interest">
+                                <i class="fas fa-car"></i> TENHO INTERESSE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="carousel-slide">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>T-Cross Sense 2026</h2>
+                        </div>
+                        <img src="cross-sense-2026.webp"/>
+                        <div class="card-content">
+                            <div class="original-price">de R$ 119.990,00</div>
+                            <div class="price-label">por a partir de</div>
+                            <div class="discount-price">R$ 100.921,00</div>
+                            <div class="tax-info">
+                                <i class="fas fa-check-circle"></i> Com isenções de IPI e ICMS
+                            </div>
+                            
+                            <div class="savings">
+                                <h3>ECONOMIA DE</h3>
+                                <p>R$ 19.069,00</p>
+                            </div>
+                            
+                            <button class="btn-interest">
+                                <i class="fas fa-car"></i> TENHO INTERESSE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="carousel-slide">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Polo Sense 2026</h2>
+                        </div>
+                        <img src="polo-2026.webp"/>
+                        <div class="card-content">
+                            <div class="original-price">de R$ 112.560,00</div>
+                            <div class="price-label">por a partir de</div>
+                            <div class="discount-price">R$ 91.976,66</div>
+                            
+                            <div class="tax-info">
+                                <i class="fas fa-check-circle"></i> Com isenções de IPI e ICMS
+                            </div>
+                            
+                            <div class="savings">
+                                <h3>ECONOMIA DE</h3>
+                                <p>R$ 20.583,00</p>
+                            </div>
+                            
+                            <button class="btn-interest">
+                                <i class="fas fa-car"></i> TENHO INTERESSE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 4 -->
+                <div class="carousel-slide">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Fastback T200 2026</h2>
+                        </div>
+                        <img src="fastback-2026.webp"/>
+                        <div class="card-content">
+                            <div class="original-price">de R$ 119.990,00</div>
+                            <div class="price-label">por a partir de</div>
+                            <div class="discount-price">R$ 103.706,00</div>
+                            
+                            <div class="tax-info">
+                                <i class="fas fa-check-circle"></i> Com isenções de IPI e ICMS
+                            </div>
+                            
+                            <div class="savings">
+                                <h3>ECONOMIA DE</h3>
+                                <p>R$ 16.284,00</p>
+                            </div>
+                            
+                            <button class="btn-interest">
+                                <i class="fas fa-car"></i> TENHO INTERESSE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navegação do carrossel -->
+            <div class="carousel-nav">
+                <button id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                <button id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            
+            <!-- Indicadores -->
+            <div class="carousel-indicators">
+                <div class="indicator active" data-slide="0"></div>
+                <div class="indicator" data-slide="1"></div>
+                <div class="indicator" data-slide="2"></div>
+                <div class="indicator" data-slide="3"></div>
+            </div>
+        </div>
+        
+    </div>
+    <!-- Process -->
+    <section class="process" id="processo">
+        <div class="container">
+            <h2 class="section-title">Como funciona em 4 passos</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <h3>Pré-análise Gratuita</h3>
+                    <p>Envie um Relatório Médico e algum exame (caso possua), para verificarmos se a sua patologia se enquadra na lei.</p>
+                </div>
+                <div class="process-step">
+                    <h3>CNH PcD</h3>
+                    <p>Para Condutor é feito a alteração da CNH para PcD. Para Não Condutor vai direto para as isenções PcD.</p>
+                </div>
+                <div class="process-step">
+                    <h3>Isenções PCD</h3>
+                    <p>Solicitamos as isenções de IPI e ICMS e, após as liberações, o beneficiário faz o pedido do carro na concessionária.</p>
+                </div>
+                <div class="process-step">
+                    <h3>Veículo Faturado</h3>
+                    <p>Com a NF providenciamos o documento e emplacamento do veículo, e por fim as isenções de IPVA e Rodizio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bonus -->
+    <div class="container">
+        <div class="bonus">
+            <h3><i class="fas fa-gift"></i> Bônus Exclusivo Isencar</h3>
+            <p>Ao contratar nossa assessoria, fazemos uma análise preliminar para saber se você também tem direito à Isenção de IMPOSTO DE RENDA sobre aposentadoria ou pensão.</p>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Quanto tempo demora o processo de isenção PcD?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Se o processo for para Condutor, considerando a alteração da CNH para PcD e as liberações das isenções de IPI e ICMS, o prazo médio atual é entre 50 e 65 dias. Para Não Condutor, o processo é mais rápido, entre 30 e 45 dias.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Posso comprar carro PcD sem ter CNH Especial?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Só é permitido comprar carro PcD sem ter CNH Especial (PcD), quando o beneficiário for Não Condutor. Para beneficiário Condutor é obrigatório a CNH Especial (PcD).</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>O carro PcD só pode ser comprado à vista?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Não, o carro PcD 0KM pode ser comprado através de financiamento CDC, carta contemplada de consórcio e até carro usado como parte de pagamento. Não é permitido leasing. Se o beneficiário for menor de idade, o responsável legal entrará como avalista do financiamento.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Pessoa com nome negativado pode comprar carro PcD?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim, desde que o pagamento seja à vista e não dependa de financiamento. O único motivo que impede compra de carro PcD 0KM é dívida tributária com a Receita Federal e a Secretaria da Fazenda do Estado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="simulacao">
+        <div class="container">
+            <h2>Não perca tempo e nem dinheiro!</h2>
+            <p style="max-width: 700px; margin: 0 auto 30px; font-size: 1.2rem;">Resolvemos toda a burocracia de ponta a ponta para você adquirir seu veículo 0km com até 30%* de desconto através das isenções PcD.</p>
+            <a href="https://wa.me/551143049190" class="whatsapp-button">
+                <i class="fab fa-whatsapp"></i> FALE COM O ESPECIALISTA AGORA
+            </a>
+            <div class="disclaimer">
+                *Desconto composto por isenções fiscais + eventual bônus da montadora, variável conforme modelo.
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>ISENCAR</h3>
+                    <p>Isenções Serviços Documentalistas Ltda.</p>
+                    <p>CNPJ 26.984.027/0001-50</p>
+                    <p>Rua Cubatão, 86 - sala 110</p>
+                    <p>Paraíso - São Paulo/SP</p>
+                    <p>CEP 04013-000</p>
+                </div>
+                <div class="footer-column">
+                    <h3>CONTATO</h3>
+                    <a href="tel:1143049190"><i class="fas fa-phone"></i> (11) 4304-9190</a>
+                    <a href="https://wa.me/551143049190"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    <p>Atendimento em todo o Estado de SP</p>
+                </div>
+                <div class="footer-column">
+                    <h3>LINKS RÁPIDOS</h3>
+                    <a href="#servicos">Nossos Serviços</a>
+                    <a href="#direito">Quem tem Direito</a>
+                    <a href="#processo">Como Funciona</a>
+                    <a href="#faq">Perguntas Frequentes</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Isencar - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const carousel = document.querySelector('.carousel');
+            const slides = document.querySelectorAll('.carousel-slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const indicators = document.querySelectorAll('.indicator');
+            
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+            
+            // Função para atualizar a posição do carrossel
+            function updateCarousel() {
+                carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+                
+                // Atualizar indicadores
+                indicators.forEach((indicator, index) => {
+                    if (index === currentSlide) {
+                        indicator.classList.add('active');
+                    } else {
+                        indicator.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Próximo slide
+            nextBtn.addEventListener('click', function() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateCarousel();
+            });
+            
+            // Slide anterior
+            prevBtn.addEventListener('click', function() {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                updateCarousel();
+            });
+            
+            // Navegação por indicadores
+            indicators.forEach(indicator => {
+                indicator.addEventListener('click', function() {
+                    currentSlide = parseInt(this.getAttribute('data-slide'));
+                    updateCarousel();
+                });
+            });
+            
+            // Navegação automática (opcional - descomente para ativar)
+            /*
+            setInterval(function() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateCarousel();
+            }, 5000);
+            */
+            
+            // Botão de interesse
+            const interestBtns = document.querySelectorAll('.btn-interest');
+            interestBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const cardTitle = this.closest('.card').querySelector('.card-header h2').textContent;
+                    alert(`Obrigado pelo interesse no ${cardTitle}! Em breve nossa equipe entrará em contato.`);
+                });
+            });
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isActive = answer.classList.contains('active');
+                
+                // Close all answers
+                document.querySelectorAll('.faq-answer').forEach(ans => {
+                    ans.classList.remove('active');
+                });
+                
+                // Close all icons
+                document.querySelectorAll('.faq-question i').forEach(icon => {
+                    icon.className = 'fas fa-chevron-down';
+                });
+                
+                // If not active, open this one
+                if (!isActive) {
+                    answer.classList.add('active');
+                    question.querySelector('i').className = 'fas fa-chevron-up';
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
