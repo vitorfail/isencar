@@ -16,7 +16,7 @@
         :root {
             --primary: #1a6dcc;
             --primary-dark: #0d56a3;
-            --secondary: #ff6b00;
+            --secondary: #dd2c00;
             --light: #f8f9fa;
             --dark: #333;
             --gray: #6c757d;
@@ -34,6 +34,10 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+        .google{
+            width: 20%;
+            height: auto;
         }
 
         /* Header */
@@ -95,7 +99,7 @@
             padding: 12px 25px;
             border-radius: 50px;
             font-weight: bold;
-            font-size: 1rem;
+            font-size: 1.5rem;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
@@ -220,7 +224,11 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             border-left: 4px solid var(--secondary);
         }
-
+        .testimonial-card video{
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+        } 
         .client-info {
             display: flex;
             align-items: center;
@@ -411,19 +419,51 @@
 
         /* Bonus */
         .bonus {
-            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            background: linear-gradient(to right, rgb(235, 141, 0), rgb(211, 127, 2));
             color: white;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
             padding: 50px 20px;
             border-radius: 15px;
             margin: 50px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .bonus::before{
+            position: absolute;
+            content: "";
+            background: url("leao.webp");
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 120%;
+            width: 100%;
+            left: 0px;
+            bottom: -30px;
+        }
+        .bonus::after{
+            position: absolute;
+            content: "";
+            background: url("receita.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 70px;
+            width: 100%;
+            margin: 20px 20px;
+            left: -1px;
+            bottom: 0;
         }
 
         .bonus h3 {
-            font-size: 1.8rem;
+            font-size: 3rem;
             margin-bottom: 15px;
         }
-
+        .bonus p{
+            width: 70%;
+            font-size: 25px;
+        }
         /* CTA Section */
         .cta-section {
             text-align: center;
@@ -437,7 +477,7 @@
             font-size: 2.2rem;
         }
 
-        .whatsapp-button {
+        .whatsapp-b{
             background-color: #25D366;
             color: white;
             padding: 15px 30px;
@@ -452,7 +492,7 @@
             transition: all 0.3s ease;
         }
 
-        .whatsapp-button:hover {
+        .whatsapp-b:hover {
             background-color: #128C7E;
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
@@ -461,7 +501,7 @@
         /* Footer */
         footer {
             background-color: #222;
-            color: white;
+            color: #b9b9b9;
             padding: 50px 0 20px;
         }
 
@@ -471,24 +511,18 @@
             gap: 40px;
             margin-bottom: 40px;
         }
-
-        .footer-column h3 {
-            color: var(--secondary);
-            margin-bottom: 20px;
-            font-size: 1.3rem;
-        }
-
-        .footer-column p, .footer-column a {
-            color: #ccc;
-            margin-bottom: 10px;
-            display: block;
-            text-decoration: none;
-        }
-
-        .footer-column a:hover {
+        .credencial{
+            width: 100%;
+            display: flex;
             color: white;
+            align-items: center;
+            padding-bottom: 30px;
+            justify-content: space-between;
         }
-
+        .credencial img{
+            height: 150px;
+            width: auto;
+        }
         .copyright {
             text-align: center;
             padding-top: 20px;
@@ -524,7 +558,6 @@
         }
         
         .carousel-slide {
-            min-width: 100%;
             padding: 20px;
             display: flex;
             justify-content: center;
@@ -534,7 +567,7 @@
             background: white;
             border-radius: 15px;
             overflow: hidden;
-            width: 70%;
+            width: 100%;
             max-width: 350px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -557,7 +590,7 @@
         }
         
         .card-header h2 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             margin-bottom: 5px;
         }
         
@@ -632,39 +665,17 @@
             transition: background 0.3s ease;
             margin-top: 10px;
             letter-spacing: 1px;
+            display: flex;
+            text-decoration: none;
+            align-items: center;
+            justify-content: center;
         }
         
         .btn-interest:hover {
             background: #c0392b;
         }
         
-        .carousel-nav {
-            display: flex;
-            justify-content: center;
-            margin-top: 25px;
-            gap: 15px;
-        }
-        
-        .carousel-nav button {
-            background: rgba(0, 0, 0, 0.2);
-            border: none;
-            color: rgb(0, 0, 0);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .carousel-nav button:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(1.1);
-        }
-        
+ 
         .carousel-indicators {
             display: flex;
             justify-content: center;
@@ -692,27 +703,87 @@
             margin-bottom: 40px;
             font-size: 0.9rem;
         }
-        
-        @media (max-width: 768px) {
-            .card-header h2 {
-                font-size: 1.5rem;
-            }
-            
-            .discount-price {
-                font-size: 1.7rem;
-            }
-            
-            .carousel-nav button {
-                width: 45px;
-                height: 45px;
-                font-size: 1.3rem;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
+        .cont img:nth-of-type(1){
+            width: 10vw; height: auto;
+        }
+        .cont img:nth-of-type(2){
+            width: 10vw; height: auto;
+        }
+                /* Botão flutuante do WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
         }
         
+        .whatsapp-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            background-color: #25D366;
+            border-radius: 50%;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            text-decoration: none;
+            position: relative;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.7);
+        }
+        
+        .whatsapp-button i {
+            font-size: 36px;
+            color: white;
+        }
+        
+        .whatsapp-tooltip {
+            position: absolute;
+            right: 80px;
+            background-color: #075E54;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateX(10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .whatsapp-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            transform: translateY(-50%);
+            border-width: 8px;
+            border-style: solid;
+            border-color: transparent transparent transparent #075E54;
+        }
+        
+        .whatsapp-button:hover .whatsapp-tooltip {
+            opacity: 1;
+            transform: translateX(0);
+        }
+                @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
         @media (max-width: 480px) {
             .card {
                 width: 100%;
@@ -728,11 +799,68 @@
         }
         /* Responsive */
         @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                gap: 15px;
+            footer p{
+                font-size: 0.7rem;
             }
-            
+            .card-header h2 {
+                font-size: 1.5rem;
+            }
+            .discount-price {
+                font-size: 1.7rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .cta-button{
+                font-size: 0.95rem;
+            }
+            .bonus h3{
+                font-size: 2rem;
+            }
+            .bonus::after{
+                width: 35px;
+                bottom: -40px;
+            }
+            .bonus::before{
+                opacity: 0.6;
+                height: 50%;
+                width: 100%;
+                left: 0px;
+                bottom: -40px;
+            }
+            .footer-note{
+                width: 90%;
+            }
+            .bonus p{
+                position: relative;
+                text-shadow: 0px 0px 40px black;
+                font-size: 100%;
+            }
+            .carousel-container .section-title{
+                width: 100%;
+            }
+            .carousel{
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            .cont h2{
+                font-size: 30px;
+            }
+            .cont img:nth-child(1){
+                width: 40vw;
+            }
+            .cont img:nth-of-type(2){
+                width: 50%;
+            }
+            .header-container {
+                padding: 10px 0px;
+                flex-direction: column;
+            }
+            .logo{
+                width: 100px;
+                height: 40px;
+            }
             .contact-header {
                 align-items: center;
             }
@@ -752,10 +880,34 @@
             .process-step {
                 min-width: 100%;
             }
+             .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .whatsapp-button {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .whatsapp-button i {
+                font-size: 30px;
+            }
+            
+            .whatsapp-tooltip {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="whatsapp-float">
+        <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20mais%20informações." target="_blank" class="whatsapp-button">
+            <i class="fab fa-whatsapp"></i>
+            <span class="whatsapp-tooltip">Fale conosco no WhatsApp!</span>
+        </a>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="container header-container">
@@ -776,7 +928,7 @@
             <div class="discount-badge">ATÉ 30%* DE DESCONTO</div>
             <h2>Compre seu Carro 0km com Isenções PcD</h2>
             <p>Livre-se da burocracia! Cuidamos de tudo: <span class="highlight">CNH PcD e Isenções (IPI, ICMS, IPVA e Rodízio)</span>. Seu processo com agilidade e segurança!</p>
-            <a href="https://wa.me/551143049190" class="cta-button">SIMULAR MEU DIREITO GRÁTIS</a>
+            <a href="https://wa.me/551143049190" class="cta-button">TEM DÚVIDA SE SUA PATOLOGIA ENTRA? <br> FALE CONOSCO NO WHATSAPP</a>
         </div>
     </section>
 
@@ -804,17 +956,29 @@
             </div>
         </div>
     </section>
-
+    <section>
+        <div class="container cont" style="padding: 10px 0px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+            <img style="padding: 10px 0px;" class="google" src="google.png"/>
+            <h3 style="padding: 10px 0px; font-size: 25px;">481 Avaliações</h3>
+            <img style="padding: 10px 0px;" src="avaliacao.png"/>
+            <div style="display: flex; align-items: center; justify-content: center; font-size: 30px; padding: 10px 0px;">
+                <h2 style="text-align: center; font-weight: 500; color: #555555; padding: 10px 0px;" id="contador">+ 0 clientes atendidos</h2>
+            </div>
+        </div>
+    </section>
     <!-- Testimonials -->
     <section class="testimonials">
         <div class="container">
             <h2 class="section-title">Quem conhece, confia na Isencar</h2>
             <div class="testimonial-grid">
                 <div class="testimonial-card">
+                    <video  controls="false">
+                        <source src="video1.webm" type="video/webm" />
+                    </video>
                     <div class="client-info">
                         <div class="client-avatar">J</div>
                         <div class="client-details">
-                            <h4>Jeremias</h4>
+                            <h4>Jeremias Apolinário</h4>
                             <p>Analista de TI</p>
                         </div>
                     </div>
@@ -825,9 +989,12 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"Recomendo, serviço nota 10. Comprei 2 carros PcD com a Isencar."</p>
+                    <p>Profissional comprometido, atencioso, competente, meus 2 carros pelo PCD foi feito com esse despachante com a mais transparencia, rapidez, recomendo a todos, abacos, Grato. </p>
                 </div>
                 <div class="testimonial-card">
+                    <video  controls="false">
+                        <source src="video3.webm" type="video/webm" />
+                    </video>
                     <div class="client-info">
                         <div class="client-avatar">N</div>
                         <div class="client-details">
@@ -842,9 +1009,12 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"Já comprei 3 carros PcD e recomendo a Isencar. Processo ágil e seguro."</p>
+                    <p>Recomendo com toda certeza a isencar porque fiz a alteração da CNH e todas as isenções para a compra do veículo 0km no menor tempo possível. Atendimento rápido e eficiente do começo ao fim. Ótimo custo benefício</p>
                 </div>
                 <div class="testimonial-card">
+                    <video  controls="false">
+                        <source src="video2.webm" type="video/webm" />
+                    </video>
                     <div class="client-info">
                         <div class="client-avatar">J</div>
                         <div class="client-details">
@@ -859,17 +1029,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"Sou cliente desde 2016 e já fiz 3 isenções PcD. Serviço confiável e eficiente."</p>
-                </div>
-            </div>
-            <div class="stats">
-                <div class="stat-item">
-                    <div class="stat-number">485</div>
-                    <div class="stat-label">Avaliações 5★</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">+4.000</div>
-                    <div class="stat-label">Clientes Atendidos</div>
+                    <p>Excelente atendimento na rapidez das informações corretas e cordialidade sempre.</p>
                 </div>
             </div>
         </div>
@@ -910,7 +1070,7 @@
             </div>
             <div style="text-align: center; margin-top: 30px;">
                 <p>A isenção para Não Condutores pode ser solicitada tanto pela própria pessoa quanto por seu responsável legal.</p>
-                <a href="https://wa.me/551143049190" class="whatsapp-button" style="margin-top: 20px;">
+                <a href="https://wa.me/551143049190" class="whatsapp-b" style="margin-top: 20px;">
                     <i class="fab fa-whatsapp"></i> Tem dúvida se sua patologia entra? Fale conosco no WhatsApp
                 </a>
             </div>
@@ -923,62 +1083,6 @@
                 <p><i class="fas fa-info-circle"></i> Ofertas válidas por tempo limitado. Consulte condições na concessionária.</p>
             </div>
             <div class="carousel">
-                <!-- Slide 1 -->
-                <div class="carousel-slide">
-                    <div class="card">
-                        <div class="card-header">
-                            <h2>Tera Comfort 2026</h2>
-                        </div>
-                        <img src="tera-comfort-2026.webp"/>
-                        <div class="card-content">
-                            <div class="original-price">de R$ 128.890,00</div>
-                            <div class="price-label">por a partir de</div>
-                            <div class="discount-price">R$ 111.789,92</div>
-                            
-                            <div class="tax-info">
-                                <i class="fas fa-check-circle"></i> Com isenção de IPI
-                            </div>
-                            
-                            <div class="savings">
-                                <h3>ECONOMIA DE</h3>
-                                <p>R$ 17.100,08</p>
-                            </div>
-                            
-                            <button class="btn-interest">
-                                <i class="fas fa-car"></i> TENHO INTERESSE
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Slide 2 -->
-                <div class="carousel-slide">
-                    <div class="card">
-                        <div class="card-header">
-                            <h2>T-Cross Sense 2026</h2>
-                        </div>
-                        <img src="cross-sense-2026.webp"/>
-                        <div class="card-content">
-                            <div class="original-price">de R$ 119.990,00</div>
-                            <div class="price-label">por a partir de</div>
-                            <div class="discount-price">R$ 100.921,00</div>
-                            <div class="tax-info">
-                                <i class="fas fa-check-circle"></i> Com isenções de IPI e ICMS
-                            </div>
-                            
-                            <div class="savings">
-                                <h3>ECONOMIA DE</h3>
-                                <p>R$ 19.069,00</p>
-                            </div>
-                            
-                            <button class="btn-interest">
-                                <i class="fas fa-car"></i> TENHO INTERESSE
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Slide 3 -->
                 <div class="carousel-slide">
                     <div class="card">
                         <div class="card-header">
@@ -999,24 +1103,73 @@
                                 <p>R$ 20.583,00</p>
                             </div>
                             
-                            <button class="btn-interest">
-                                <i class="fas fa-car"></i> TENHO INTERESSE
-                            </button>
+                            <a href="https://wa.me/551143049190" class="btn-interest">
+                                <i class="fas fa-car"></i> QUERO DESCONTO
+                            </a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Slide 4 -->
                 <div class="carousel-slide">
                     <div class="card">
                         <div class="card-header">
-                            <h2>Fastback T200 2026</h2>
+                            <h2>Renegade T270 2026</h2>
                         </div>
-                        <img src="fastback-2026.webp"/>
+                        <img src="renegade.png"/>
                         <div class="card-content">
-                            <div class="original-price">de R$ 119.990,00</div>
+                            <div class="original-price">de R$ 118.290,00</div>
                             <div class="price-label">por a partir de</div>
-                            <div class="discount-price">R$ 103.706,00</div>
+                            <div class="discount-price">R$ 104.058,00</div>
+                            
+                            <div class="tax-info">
+                                <i class="fas fa-check-circle"></i> Com isenção de IPI
+                            </div>
+                            
+                            <div class="savings">
+                                <h3>ECONOMIA DE</h3>
+                                <p>R$ 14.232,08</p>
+                            </div>
+                            
+                            <a href="https://wa.me/551143049190" class="btn-interest">
+                                <i class="fas fa-car"></i> QUERO DESCONTO
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Song Pro GL 2026</h2>
+                        </div>
+                        <img src="song.webp"/>
+                        <div class="card-content">
+                            <div class="original-price">de R$ 189.990,00</div>
+                            <div class="price-label">por a partir de</div>
+                            <div class="discount-price">R$ 147.990,00</div>
+                            <div class="tax-info">
+                                <i class="fas fa-check-circle"></i> Com isenções de IPI e ICMS
+                            </div>
+                            
+                            <div class="savings">
+                                <h3>ECONOMIA DE</h3>
+                                <p>R$ 42.000,00</p>
+                            </div>
+                            
+                            <a href="https://wa.me/551143049190" class="btn-interest">
+                                <i class="fas fa-car"></i> QUERO DESCONTO
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Corolla Híbrido 2026</h2>
+                        </div>
+                        <img src="corolla.png"/>
+                        <div class="card-content">
+                            <div class="original-price">de R$ 191.010,00</div>
+                            <div class="price-label">por a partir de</div>
+                            <div class="discount-price">R$ 144.658,00</div>
                             
                             <div class="tax-info">
                                 <i class="fas fa-check-circle"></i> Com isenções de IPI e ICMS
@@ -1024,32 +1177,17 @@
                             
                             <div class="savings">
                                 <h3>ECONOMIA DE</h3>
-                                <p>R$ 16.284,00</p>
+                                <p>R$ 46.351,00</p>
                             </div>
                             
-                            <button class="btn-interest">
-                                <i class="fas fa-car"></i> TENHO INTERESSE
-                            </button>
+                            <a href="https://wa.me/551143049190" class="btn-interest">
+                                <i class="fas fa-car"></i> QUERO DESCONTO
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Navegação do carrossel -->
-            <div class="carousel-nav">
-                <button id="prevBtn"><i class="fas fa-chevron-left"></i></button>
-                <button id="nextBtn"><i class="fas fa-chevron-right"></i></button>
-            </div>
-            
-            <!-- Indicadores -->
-            <div class="carousel-indicators">
-                <div class="indicator active" data-slide="0"></div>
-                <div class="indicator" data-slide="1"></div>
-                <div class="indicator" data-slide="2"></div>
-                <div class="indicator" data-slide="3"></div>
-            </div>
         </div>
-        
     </div>
     <!-- Process -->
     <section class="process" id="processo">
@@ -1118,11 +1256,55 @@
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
+                        <span>O processo de isenção PcD de Não Condutor é mais rápido?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim, como não é exigido CNH PcD, o processo vai direto para os pedidos das isenções de IPI e ICMS. O prazo médio atual é entre 30 e 45 dias.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Quem recebe o BPC do LOAS pode comprar carro PcD 0KM?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A Receita Federal não aprova a isenção de IPI para quem recebe esse benefício. Porém é possível obter isenções de IPVA e Rodizio de veículo usado.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
                         <span>Pessoa com nome negativado pode comprar carro PcD?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Sim, desde que o pagamento seja à vista e não dependa de financiamento. O único motivo que impede compra de carro PcD 0KM é dívida tributária com a Receita Federal e a Secretaria da Fazenda do Estado.</p>
+                        <p>Sim, desde que o pagamento seja à vista e não dependa de financiamento. O único motivo que impede compra de carro PcD 0KM é dívida tributária com a Receita Federal e a Secretaria da Fazenda do Estado de SP.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>O carro PcD 0KM pode ser comprado em nome dos pais quando o beneficiário for menor?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Não, sempre que o carro for comprado na condição de novo (0KM), o mesmo deverá ser feito
+                            em nome do beneficiário, mesmo que seja menor, incapaz ou interditado. Em relação à carro
+                            usado, é permitido que o mesmo esteja em nome do responsável legal do beneficiário, porém
+                            só poderá pedir as isenções de IPVA e Rodizio.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Quais doenças dão direito ao desconto?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Para Condutor, as doenças que dão direito são aquelas que geram limitações de força e/ou
+                            movimento como: Artrose, Condromalácia Patelar, Esclerose Múltipla, Espondilite
+                            Anquilosante, Hérnia de Disco entre várias outras, e cirurgias com sequelas limitantes.
+                            Para Não Condutor podemos citar: Baixa Visão em ambos os Olhos, Autismo (TEA), Paralisia
+                            Cerebral, Alzheimer, Parkinson, Síndrome de Down, etc.
+                            </p>
                     </div>
                 </div>
             </div>
@@ -1134,7 +1316,7 @@
         <div class="container">
             <h2>Não perca tempo e nem dinheiro!</h2>
             <p style="max-width: 700px; margin: 0 auto 30px; font-size: 1.2rem;">Resolvemos toda a burocracia de ponta a ponta para você adquirir seu veículo 0km com até 30%* de desconto através das isenções PcD.</p>
-            <a href="https://wa.me/551143049190" class="whatsapp-button">
+            <a href="https://wa.me/551143049190" class="whatsapp-b">
                 <i class="fab fa-whatsapp"></i> FALE COM O ESPECIALISTA AGORA
             </a>
             <div class="disclaimer">
@@ -1146,95 +1328,74 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h3>ISENCAR</h3>
-                    <p>Isenções Serviços Documentalistas Ltda.</p>
-                    <p>CNPJ 26.984.027/0001-50</p>
-                    <p>Rua Cubatão, 86 - sala 110</p>
-                    <p>Paraíso - São Paulo/SP</p>
-                    <p>CEP 04013-000</p>
-                </div>
-                <div class="footer-column">
-                    <h3>CONTATO</h3>
-                    <a href="tel:1143049190"><i class="fas fa-phone"></i> (11) 4304-9190</a>
-                    <a href="https://wa.me/551143049190"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                    <p>Atendimento em todo o Estado de SP</p>
-                </div>
-                <div class="footer-column">
-                    <h3>LINKS RÁPIDOS</h3>
-                    <a href="#servicos">Nossos Serviços</a>
-                    <a href="#direito">Quem tem Direito</a>
-                    <a href="#processo">Como Funciona</a>
-                    <a href="#faq">Perguntas Frequentes</a>
-                </div>
+            <div class="credencial">
+                <p style="text-align: left;">
+                    Isencar Isenções Serviços<br>
+                    Documentalistas Ltda.<br>
+                    CNPJ 26.984.027/0001-50<br>
+                    Rua Cubatão, 86 - sala 110 - Paraiso<br>
+                    São Paulo/SP - CEP 04013-000<br>
+                    Telefone: (11) 4304-9190<br>
+                </p>
+                <img src="credencial.png"/>
+            </div>
+            <div class="footer-grid" style="text-align: justify;">
+                <p>A Isencar Isenções Serviços Documentalistas Ltda., NÃO COMERCIALIZA Veículos. Os valores, modelos e versões dos veículos são
+meramente informativos, sujeitos à alterações sem prévio aviso. Informações atualizadas sobre os veículos deverão ser obtidas
+diretamente com as concessionárias das montadoras. Fotos ilustrativas. Todas as marcas registradas, nomes comerciais, marcas de
+serviços e logotipos aqui mencionados pertencem às respectivas empresas. *Desconto composto por isenções fiscais + eventual
+bônus da montadora, variável conforme modelo.</p>
             </div>
             <div class="copyright">
                 <p>&copy; 2023 Isencar - Todos os direitos reservados</p>
             </div>
         </div>
     </footer>
-
     <script>
-        const carousel = document.querySelector('.carousel');
-            const slides = document.querySelectorAll('.carousel-slide');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const indicators = document.querySelectorAll('.indicator');
+        const counterElement = document.getElementById('contador');
+        const valorFinal = 4000;
+        const duracao = 3000; // 3 segundos
+        let animacaoIniciada = false;
+
+        function atualizar() {
+            if (animacaoIniciada) return;
             
-            let currentSlide = 0;
-            const totalSlides = slides.length;
+            animacaoIniciada = true;
+            const inicio = Date.now();
+            const fim = inicio + duracao;
             
-            // Função para atualizar a posição do carrossel
-            function updateCarousel() {
-                carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+            function animar() {
+                const agora = Date.now();
                 
-                // Atualizar indicadores
-                indicators.forEach((indicator, index) => {
-                    if (index === currentSlide) {
-                        indicator.classList.add('active');
-                    } else {
-                        indicator.classList.remove('active');
-                    }
-                });
+                if (agora < fim) {
+                    const valorAtual = Math.floor(((agora - inicio) / duracao) * valorFinal);
+                    counterElement.textContent = `+ ${valorAtual} clientes atendidos`;
+                    requestAnimationFrame(animar);
+                } else {
+                    counterElement.textContent = `+ ${valorFinal} clientes atendidos`;
+                }
             }
             
-            // Próximo slide
-            nextBtn.addEventListener('click', function() {
-                currentSlide = (currentSlide + 1) % totalSlides;
-                updateCarousel();
+            requestAnimationFrame(animar);
+        }
+
+        // Configurar o Intersection Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !animacaoIniciada) {
+                    atualizar();
+                }
             });
-            
-            // Slide anterior
-            prevBtn.addEventListener('click', function() {
-                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-                updateCarousel();
-            });
-            
-            // Navegação por indicadores
-            indicators.forEach(indicator => {
-                indicator.addEventListener('click', function() {
-                    currentSlide = parseInt(this.getAttribute('data-slide'));
-                    updateCarousel();
-                });
-            });
-            
-            // Navegação automática (opcional - descomente para ativar)
-            /*
-            setInterval(function() {
-                currentSlide = (currentSlide + 1) % totalSlides;
-                updateCarousel();
-            }, 5000);
-            */
-            
-            // Botão de interesse
-            const interestBtns = document.querySelectorAll('.btn-interest');
-            interestBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const cardTitle = this.closest('.card').querySelector('.card-header h2').textContent;
-                    alert(`Obrigado pelo interesse no ${cardTitle}! Em breve nossa equipe entrará em contato.`);
-                });
-            });
+        }, {
+            threshold: 0.5, // Elemento precisa estar 50% visível
+            rootMargin: '0px 0px -50px 0px' // Opcional: ajusta quando dispara
+        });
+
+        // Observar o elemento
+        if (counterElement) {
+            observer.observe(counterElement);
+        }
+        
         // FAQ toggle functionality
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
@@ -1258,24 +1419,22 @@
                 }
             });
         });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
+        function updateWhatsAppNumber() {
+            // Esta função pode ser usada para atualizar dinamicamente o número
+            // Por exemplo, com base na localização do usuário
+            const phoneNumber = "551143049190"; // Número padrão (Brasil)
+            const message = "Olá! Gostaria de mais informações sobre os veículos";
+            
+            // Atualiza todos os links do WhatsApp na página
+            const whatsappLinks = document.querySelectorAll('a[href*="wa.me"]');
+            whatsappLinks.forEach(link => {
+                link.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
             });
-        });
+        }
+        
+        // Chama a função ao carregar a página
+        window.onload = updateWhatsAppNumber;
+        // Smooth scroll for anchor links
     </script>
 </body>
 </html>
